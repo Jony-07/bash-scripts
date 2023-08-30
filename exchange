@@ -1,3 +1,5 @@
+# This bash-script swaps the content between two files 
+
 if [ ! -e "$1" ]; then
 	echo "el archivo $1 no existe"
 	exit 1

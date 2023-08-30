@@ -1,0 +1,23 @@
+if [ ! -e "$1" ]; then
+	echo "el archivo $1 no existe"
+	exit 1
+fi
+if [ ! -f "$1" ]; then 
+	echo "el archivo $1 no es un fichero normal"
+	exit 1
+fi
+if [ ! -e "$2" ]; then
+        echo "el archivo $2 no existe"
+        exit 1
+fi
+if [ ! -f "$2" ]; then
+        echo "el archivo $2 no es un fichero normal"
+        exit 1
+fi
+contenido_01=$(cat $1)
+contenido_02=$(cat $2)
+cat $1 > temp1
+cat $2 > temp2
+cat temp2 > $1
+cat temp1 > $2
+rm temp1 temp2
